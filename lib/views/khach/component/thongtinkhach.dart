@@ -160,27 +160,11 @@ class _ThongTinKhachViewState extends ConsumerState<ThongTinKhachView> {
                         Gap(20),
                         SizedBox(
                           width: double.infinity,
-                          child: SegmentedButton(
-                            showSelectedIcon: false,
-                            style: ButtonStyle(
-                              shape: WidgetStatePropertyAll(
-                                RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
-                              ),
-                            ),
-                            selectedIcon: null,
-                            onSelectionChanged: (val) {
-                              setState(() {
-                                _selectedMien = val;
-                              });
-                            },
-                            segments: [
-                              ButtonSegment(value: 'Nam', label: Text('Nam')),
-                              ButtonSegment(value: 'Trung', label: Text('Trung')),
-                              ButtonSegment(value: 'Bắc', label: Text('Bắc')),
-                            ],
-
-                            selected: _selectedMien,
-                          ),
+                          child: WidgetSelectMien(selected: _selectedMien,onSelectionChanged: (val){
+                            setState(() {
+                              _selectedMien = val;
+                            });
+                          },),
                         ),
                         Expanded(
                           child: CustomDatatable(

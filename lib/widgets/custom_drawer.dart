@@ -56,7 +56,9 @@ class CustomDrawer extends ConsumerWidget {
                     ),
                     ListTile(title: Text('Báo cáo chi tiết'), leading: Icon(PhosphorIcons.gridNine()), onTap: () {}),
                     ListTile(title: Text('Báo cáo tổng tiền'), leading: Icon(PhosphorIcons.gridFour()), onTap: () {}),
-                    ListTile(title: Text('Kết quả xổ số'), leading: Icon(PhosphorIcons.cableCar()), onTap: () {}),
+                    ListTile(title: Text('Kết quả xổ số'), leading: Icon(PhosphorIcons.cableCar()), onTap: () {
+                      context.push(RouterPath.kqxs);
+                    }),
                     ListTile(title: Text('Từ khóa'), leading: Icon(PhosphorIcons.arrowsClockwise()), onTap: () {}),
                     ListTile(title: Text('Cài đặt'), leading: Icon(PhosphorIcons.gear()), onTap: () {
                       context.push(RouterPath.caiDat);

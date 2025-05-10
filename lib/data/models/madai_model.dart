@@ -33,7 +33,7 @@ class MaDaiModel {
       moTa: map[MaDaiString.moTa],
       mien: map[MaDaiString.mien],
       thu: map[MaDaiString.thu],
-      tt: map[MaDaiString.tt],
+      tt: map[MaDaiString.tt]??0,
     );
   }
 }

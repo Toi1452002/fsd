@@ -28,9 +28,9 @@ Future<Map> getKQXSHomNay({required String mien, required DateTime ngay}) async 
       String date = dateMonth.split('/').first;
       String month = dateMonth.split('/').last;
 
-      result['Date'] = "$year-$month-$date";
+      // result['Date'] = "$year-$month-$date";
       if ("$year-$month-$date" != CustomDateFormat().yMd(ngay)) {
-        CustomAlert().error('KQXS chưa hoàn thành');
+        // CustomAlert().error('KQXS chưa hoàn thành');
         return {};
       }
       if (maMien != 'mb') {
@@ -84,9 +84,9 @@ Future<Map> getKQXSMinhNgoc({required String mien, required DateTime ngay}) asyn
     if(response.statusCode == 200){
       final convertHTML = parse(response.data);
       final dateKQXS = convertHTML.getElementsByClassName("title").first.getElementsByTagName("a").last.text;
-      result['Date'] = CustomDateFormat().yMd(dateKQXS);
+      // result['Date'] = CustomDateFormat().yMd(dateKQXS);
       if (CustomDateFormat().yMd(dateKQXS) != CustomDateFormat().yMd(ngay)) {
-        CustomAlert().error('KQXS chưa hoàn thành');
+        // CustomAlert().error('KQXS chưa hoàn thành');
         return {};
       }
 

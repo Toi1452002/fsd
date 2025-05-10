@@ -10,11 +10,19 @@ class MaDaiNotifier extends StateNotifier<List<MaDaiModel>> {
 
   final _sqlRepository = SqlRepository(tableName: TableString.maDai);
 
-  Future<void> getMaDaiTheoThu({int thu = 0, String mien = 'N'}) async {
+  Future<void> getMaDaiTheoThu({int? thu = 0, String mien = 'N'}) async {
     try {
+      String where = "${MaDaiString.mien} = ?";
+      List<Object?>? whereArgs =  [mien];
+      if(mien=='B') thu = null;
+      if(mien!='B'){
+        where += " AND ${MaDaiString.thu} = ?";
+        whereArgs.add(thu);
+      }
+
       final data = await _sqlRepository.getData(
-        where: "${MaDaiString.thu} = ? AND ${MaDaiString.mien} = ?",
-        whereArgs: [thu, mien],
+        where: where,
+        whereArgs: whereArgs,
         orderBy: MaDaiString.tt,
       );
       state = data.map((e) => MaDaiModel.fromMap(e)).toList();

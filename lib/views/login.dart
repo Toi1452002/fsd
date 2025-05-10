@@ -27,7 +27,7 @@ class LoginView extends ConsumerWidget {
              builder: (context) {
                return Dialog(
                  child: Padding(
-                   padding: const EdgeInsets.all(8.0),
+                   padding: const EdgeInsets.all(10),
                    child: Column(
                      mainAxisSize: MainAxisSize.min,
                      children: [

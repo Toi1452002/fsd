@@ -49,9 +49,9 @@ class SqlRepository{
     return await cnn.delete(tableNameOther ?? tableName, where: where);
   }
 
-  Future<String?> getCellValue({required String field, required String where}) async {
+  Future<String?> getCellValue({required String field, required String where,String? tableNameOther}) async {
     final cnn = await connectData();
-    final data = await cnn!.rawQuery("SELECT $field FROM $tableName WHERE $where");
+    final data = await cnn!.rawQuery("SELECT $field FROM ${tableNameOther??tableName} WHERE $where");
     return data.isEmpty ? null : data.first[field].toString();
   }
 

@@ -11,6 +11,9 @@ final routerProvider = StateProvider<GoRouter>((ref) {
       GoRoute(path: RouterPath.login, builder: (context, state) => LoginView()),
       GoRoute(path: RouterPath.home, builder: (context, state) => HomeView()),
 
+
+      GoRoute(path: RouterPath.kqxs, builder: (context, state) => KQXSView()),
+
       GoRoute(path: RouterPath.khach, builder: (context, state) => KhachView()),
       GoRoute(path: RouterPath.thongTinKhach, builder: (context, state) => ThongTinKhachView()),
 

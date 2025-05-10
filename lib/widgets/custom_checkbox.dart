@@ -13,9 +13,9 @@ class CustomCheckbox extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Row(
         children: [
-          Text(title),
-          Spacer(),
-          Checkbox(value: value, onChanged:enabled ? onChanged : null,)
+          Expanded(child: Text(title,softWrap: false)),
+          // Spacer(),
+          SizedBox(width: 30,child: Checkbox(value: value, onChanged:enabled ? onChanged : null,))
         ],
       ),
     );
